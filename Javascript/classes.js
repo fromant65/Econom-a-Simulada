@@ -2,6 +2,6 @@ import {Bienes} from './bienes.js';
 import {Empresa} from './empresa.js';
 import {Pop} from './pop.js';
 
-var productos= []; //Array con todos los objetos de clase Bienes
-var empresas= []; //Array con todos los objetos de clase Empresa
-var Pops= []; //Array con todos los objetos de clase Pop
+const productos= []; //Array con todos los objetos de clase Bienes
+const empresas= []; //Array con todos los objetos de clase Empresa
+const Pops= []; //Array con todos los objetos de clase Pop
