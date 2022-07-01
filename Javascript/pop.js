@@ -41,3 +41,5 @@ export class Pop{
 
     }//Funcion que compra los bienes que necesita la Pop y los consume
 } 
+
+var Pops= []; //Array con todos los objetos de clase Pop

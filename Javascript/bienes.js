@@ -22,3 +22,4 @@ export class Bienes{
     }//Funcion que hace variar el precio en caso de que la oferta o la demandda no sean iguales
 } 
 
+var productos= []; //Array con todos los objetos de clase Bienes

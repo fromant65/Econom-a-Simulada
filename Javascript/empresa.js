@@ -5,3 +5,5 @@ export class Empresa{
         this.bien=bien; //id del bien producido
     }
 } 
+
+var empresas= []; //Array con todos los objetos de clase Empresa
