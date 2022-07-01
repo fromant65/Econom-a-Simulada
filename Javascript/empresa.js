@@ -6,4 +6,3 @@ export class Empresa{
     }
 } 
 
-var empresas= []; //Array con todos los objetos de clase Empresa
