@@ -31,5 +31,15 @@ export class Empresa{
             */
         }
     }
+
+    comprarInsumos(indice, cantidad){
+
+    }//Funcion que compra insumos
+
+    producir(){
+
+    }//Funcion que se encarga de la producción de la empresa, 
+    //sumando la producción a la variable 'produccion', 
+    //y consumiendo los insumos necesarios
 } 
 
