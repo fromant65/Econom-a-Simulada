@@ -1,4 +1,4 @@
-class EMPRESA{
+export class Empresa{
     constructor(id, stock, bien){
         this.id=id;
         this.stock=stock; //Cantidad de producción en stock
