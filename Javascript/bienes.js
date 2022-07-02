@@ -1,6 +1,7 @@
 export class Bienes{
-    constructor(id){
+    constructor(id, precio){
         this.id=id;
+        this.precio=precio;
     }
 
     determinarOferta(){
