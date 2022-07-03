@@ -11,9 +11,9 @@ export class Empresa{
     }
 
     determinarEmpleados(){
-        for(i in Pops){
-            if(this.id==Pops[i].empresa){
-                this.empleados+=Pops[i].población;
+        for(i in pops){
+            if(this.id==pops[i].empresa){
+                this.empleados+=pops[i].población;
             }
         }
     }//Funcion que determina la cantidad de empleados de la empresa.
