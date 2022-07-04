@@ -42,6 +42,8 @@ export class Pop{
         if(this.stock[indice]>cantidad){
             this.stock[indice]-=cantidad;
             //Si el stock alcanza, lo consumimos
+            return 0; 
+            //La proporción de consumo no satisfecho es 0
         }else{
             let proporcion=this.stock[indice]/cantidad;
             //Definimos la proporción de consumo no satisfecho
@@ -63,7 +65,30 @@ export class Pop{
     }//Funcion que determina los bienes que necesitará la POP de acuerdo a su población
 
     llenarNecesidades(){
+        //COMPRAR
+        for(i in this.necesidadesFinales){
+            if(this.necesidadesFinales[i]!=0){ //Si el bien que estamos viendo lo necesita la Pop
+                this.comprarBien(i, this.necesidadesFinales[i]);
+                //Compramos la cantidad del bien que necesita
+            }
+        }//Esto compra los bienes linealmente, lo que implica que posiblemente 
+        //los bienes finales de la lista no sean comprados por falta de dinero
 
+        //CONSUMIR
+        let necesidadesInsatisfechas=this.necesidadesFinales;
+        //Declaramos una variable para necesidades insatisfechas
+        for(i in this.stock){
+            necesidadesInsatisfechas[i]=this.consumirBien(i,this.necesidadesFinales);
+            //Consumimos los bienes guardando el valor de necesidades insatisfechas de cada uno
+        }
+        this.necesidadesInsatisfechas=necesidadesInsatisfechas;
+        //Guardamos el valor en una variable de la Pop
+
+        /*
+        /// Esta funcion podría retornar la matriz declarada 
+        /// Y agregarla a la Pop mediante un setter
+        /// En caso de dar problemas
+        */
     }//Funcion que compra los bienes que necesita la Pop y los consume
 } 
 
