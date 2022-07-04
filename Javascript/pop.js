@@ -43,11 +43,12 @@ export class Pop{
             this.stock[indice]-=cantidad;
             //Si el stock alcanza, lo consumimos
         }else{
-            //Si el stock no alcanza:
-            //->Decidir si se tira una alerta, 
-            //si se modifica alguna variable (por ejemplo se reduce "felicidad") sin consumir stock
-            //o si se consume todo el stock disponible ademas de alguna de las anteriores;
-            //o alguna otra variante
+            let proporcion=this.stock[indice]/cantidad;
+            //Definimos la proporción de consumo no satisfecho
+            this.stock[indice]=0;
+            //Disminuimos el stock a 0
+            return proporcion;
+            //Devolvemos la proporción de consumo no satisfecho
         }
     }//Funcion que permite consumir a la pop consumir una cierta cantidad de un bien
     //Resta 'cantidad' del stock del bien 'indice'
