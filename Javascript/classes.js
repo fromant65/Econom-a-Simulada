@@ -3,15 +3,15 @@ import {Empresa} from './empresa.js';
 import {Pop} from './pop.js';
 
 //DECLARACIÓN DE EMPRESAS
-const E1= new Empresa(1, 1000, 1, [], [], 700);
-const E2= new Empresa(2, 5000, 2, [], [], 400);
-const E3= new Empresa(3, 3000, 1, [], [], 500);
-const E4= new Empresa(4, 4000, 3, [], [], 200);
+const E1= new Empresa(1, 1000, 1, [1,2,3], [0,0,0], 700);
+const E2= new Empresa(2, 5000, 2, [1,2,3], [0,0,0], 400);
+const E3= new Empresa(3, 3000, 1, [1,2,3], [0,0,0], 500);
+const E4= new Empresa(4, 4000, 3, [1,2,3], [0,0,0], 200);
 
 //DECLARACIÓN DE POPS
-const P1= new Pop(1,[],1,1000,[],123000);
-const P2= new Pop(2,[],3,2000,[],237000);
-const P3= new Pop(3,[],2,4000,[],127500);
+const P1= new Pop(1, [1,2,3], 1, 1000000, [0,0,0], 123000);
+const P2= new Pop(2, [2,1,2], 3, 2000000, [0,0,0], 237000);
+const P3= new Pop(3, [3,3,2], 2, 4000000, [0,0,0], 127500);
 
 //DECLARACIÓN DE BIENES
 const B1= new Bienes(1, 10);
@@ -73,3 +73,24 @@ function mostrarBienes(productos){
 }
 
 mostrarBienes(productos);
+
+
+///TESTS
+console.log(P3.necesidades)
+P3.determinarNecesidades();
+console.log(P3.necesidades)
+let test1 = document.createElement("P");
+let nece = P3.necesidadesFinales;
+let necenf = P3.necesidades;
+test1.innerHTML = `NF: ${nece}; N: ${necenf}`;
+popsIndex.appendChild(test1)
+P3.llenarNecesidades(productos, empresas);
+let test2 = document.createElement("P");
+test2.innerHTML = `Necesidades insatisfechas: ${P3.necesidadesInsatisfechas}`;
+popsIndex.appendChild(test2);
+
+/*
+Estado actual:
+La función llenar necesidades no funciona porque al llamar a la función
+comprarBien() esta no compra los bienes
+*/
